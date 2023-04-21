@@ -1,0 +1,11 @@
+vueltas = 4
+Motor.Start("BC",10)
+Program.Delay(2000)
+Motor.Stop("BC","True")
+For i = 1 To vueltas
+  Motor.Move("C",10,288,"True")
+  Program.Delay(1000)
+  Motor.Start("BC",10)
+  Program.Delay(2000)
+  Motor.Stop("BC","True")
+  EndFor
