@@ -1,0 +1,19 @@
+vuelta=4
+Motor.Start("BC",40)
+For i=1 To vuelta
+  Motor.Start("BC",40)
+  While Sensor.ReadRawValue(4,0) > 200 
+  LCD.Clear()
+EndWhile
+    LCD.Clear()
+    LCD.BmpFile(1,0,0,"images/Toxic")
+    Speaker.Tone(60,250,200)
+    'se detiene los dos motores'
+    Motor.Stop("BC","True")
+    'retrocede'
+    Motor.Move("BC", -60, -360,"True")
+    'el motor en c hace que el coche quede a un angulo de 90'
+    Motor.Move("C", 60, 510,"True")
+EndFor
+    
+  Motor.Stop("BC","True")
