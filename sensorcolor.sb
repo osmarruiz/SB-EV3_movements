@@ -1,0 +1,13 @@
+vuelta = 4
+Motor.Start("BC",40)
+Sensor.SetMode(3,2)
+While "True"
+  Motor.Start("BC",40)
+  While Sensor.ReadRawValue(3,0) = 1 
+  Endwhile
+  Motor.StartSync("BC",40,-40)
+  While Sensor.ReadRawValue(3,0) <> 1
+  EndWhile
+EndWhile
+    
+
